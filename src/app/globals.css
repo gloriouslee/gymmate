@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
+@theme {
+  --color-whoop-dark: #0B0F12;
+  --color-whoop-card: #131A1E;
+  --color-whoop-surface: #1B252C;
+  --color-whoop-border: #26343E;
+  --color-whoop-teal: #00F19F;
+  --color-whoop-strain: #0093E7;
+  --color-whoop-rec-high: #16EC06;
+  --color-whoop-rec-mid: #FFDE00;
+  --color-whoop-rec-low: #FF0026;
+  --color-whoop-sleep: #7BA1BB;
+  --color-whoop-blue: #67AEE6;
+  --color-whoop-muted: #8E9DA8;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0B0F12;
+  --foreground: #F3F4F6;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0B0F12;
+  color: #F3F4F6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0F12;
+}
+::-webkit-scrollbar-thumb {
+  background: #26343E;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F19F;
+}
+
+/* Number display utility */
+.font-number {
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Glow effects */
+.glow-teal {
+  box-shadow: 0 0 20px rgba(0, 241, 159, 0.25);
+}
+.glow-strain {
+  box-shadow: 0 0 20px rgba(0, 147, 231, 0.25);
+}
+.glow-high {
+  box-shadow: 0 0 20px rgba(22, 236, 6, 0.25);
 }
